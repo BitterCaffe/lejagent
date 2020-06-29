@@ -1,0 +1,14 @@
+.gitignore
+.idea
+development
+tags
+.tags
+.tags_sorted_by_file
+*.bak
+*.swp
+vendor/
+＊.xml
+*.DS_Store
+target/
+*.iml
+
