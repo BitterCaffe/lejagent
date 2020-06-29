@@ -14,7 +14,6 @@ import javassist.NotFoundException;
 public class CtClassFactory {
 
     /**
-     *
      * @param configInfoDTO
      * @param ctClass
      * @return
@@ -23,9 +22,7 @@ public class CtClassFactory {
      */
     public static CtClass getCtClass(ConfigInfoDTO configInfoDTO, CtClass ctClass) throws NotFoundException,
             CannotCompileException {
-        boolean flag = (null == configInfoDTO || null == configInfoDTO.getClassName() || null == configInfoDTO
-                .getMethodName() || null == configInfoDTO.getAddType());
-
+        boolean flag = filterChain(configInfoDTO);
         if (flag) {
             System.out.println("get CtMethod null flag:" + flag);
             return null;
@@ -35,7 +32,6 @@ public class CtClassFactory {
 
 
     /**
-     *
      * @param configInfoDTO
      * @param ctClass
      * @return
@@ -46,5 +42,29 @@ public class CtClassFactory {
             CannotCompileException {
         AbstractMethodStrategy abstractMethodStrategy = StrategyFactory.getStrategy(configInfoDTO);
         return abstractMethodStrategy.getCtClass(configInfoDTO, ctClass);
+    }
+
+    /**
+     * 模仿过滤链、哪里不满足就断开并返回值
+     *
+     * @param configInfoDTO
+     * @return
+     */
+    private static boolean filterChain(ConfigInfoDTO configInfoDTO) {
+
+        if (null == configInfoDTO) {
+            return true;
+        }
+        if (null == configInfoDTO.getClassName()) {
+            return true;
+        }
+
+        if (null == configInfoDTO.getMethodName()) {
+            return true;
+        }
+        if (null == configInfoDTO.getAddType()) {
+            return true;
+        }
+        return false;
     }
 }

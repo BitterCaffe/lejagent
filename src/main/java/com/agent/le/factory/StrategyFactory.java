@@ -14,6 +14,8 @@ import com.agent.le.strategy.MethodStrategyBody;
  */
 public class StrategyFactory {
     /**
+     * 策略工厂可以使用 注解+反射 来消除if 但是反射好性能……
+     *
      * @param configInfoDTO
      * @return
      */

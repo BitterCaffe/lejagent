@@ -4,7 +4,6 @@ com/agent/le/enums/DefaultValueEnum.class
 com/agent/le/pojo/Test.class
 com/agent/le/enums/AddTypeEnum.class
 com/agent/le/strategy/MethodStrategyBefore.class
-com/agent/le/Test.class
 com/agent/le/strategy/MethodStrategyAfter.class
 com/agent/le/agent/JvmAopMySQL.class
 com/agent/le/agent/JvmAop.class
