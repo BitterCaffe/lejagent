@@ -1,5 +1,6 @@
 package com.agent.le.db;
 
+import com.agent.le.constant.DBConfig;
 import com.agent.le.pojo.dto.ConfigInfoDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,10 +26,10 @@ public class MySQLConfig {
     static {
         try {
             Properties properties = getProperties();
-            String driverClassName = properties.getProperty("driverClassName");
-            String url = properties.getProperty("url");
-            String username = properties.getProperty("username");
-            String password = properties.getProperty("password");
+            String driverClassName = properties.getProperty(DBConfig.MySQL.DRIVER_NAME);
+            String url = properties.getProperty(DBConfig.MySQL.URL);
+            String username = properties.getProperty(DBConfig.MySQL.USER_NAME);
+            String password = properties.getProperty(DBConfig.MySQL.PASSWORD);
             Class.forName(driverClassName);
             con = DriverManager.getConnection(url, username, password);
             System.out.println("properties info  username:" + username + "  password:" + password);
