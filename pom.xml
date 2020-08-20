@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jagent.le</groupId>
+    <groupId>com.caffe.le.jagent</groupId>
     <artifactId>le-jagent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -61,8 +61,8 @@
                             <addClasspath>true</addClasspath>
                         </manifest>
                         <manifestEntries>
-                            <Premain-Class>com.agent.le.agent.JvmAopMySQL</Premain-Class>
-                            <Agent-Class>com.agent.le.agent.JvmAopMySQL</Agent-Class>
+                            <Premain-Class>com.caffe.le.jagent.agent.JvmAopMySQL</Premain-Class>
+                            <Agent-Class>com.caffe.le.jagent.agent.JvmAopMySQL</Agent-Class>
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>
